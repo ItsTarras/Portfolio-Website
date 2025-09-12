@@ -30,11 +30,6 @@
         <!--Adds a new container within the header in the body. This allows us to manually modify the look of it.-->
         <div class="container">
             <nav>
-                <div id="imagelogo">
-                    <img src="images/Logo.png" class="logo">
-                </div>
-
-
                 <!--Creates an unordered list.-->
                 <ul>
                     <!--List declaration-->
@@ -57,69 +52,81 @@
                         <!--Create a clickable link.-->
                         <a href="#">Contact</a>
                     </li>
+
+                    <li>
+                        <div id="imagelogo">
+                            <img src="images/Logo.png" class="logo">
+                        </div>
+                    </li>
                 </ul>
             </nav>
-            <div class="header-text">
-                <p>Computer Scientist</p>
-                <h1>The Portfolio of <span>Tarras Weir</span></h1>
+
+            <!--Make this section a separate class so we can modify and fine tune the details.-->
+            <div class ="header-top">
+
+            <!-- This is the header section where it flashes my name -->
+                <div class="header-text">
+                    <p>Computer Scientist<h1>The Portfolio of <span>Tarras Weir</span></h1></p>
+                </div>
+            <!-- Edit the about section with my achievements and personal. -->
+                <div id="about"> 
+                    <div class="container">
+                        <div class="row">
+                            <div class="about-col1">
+                                <img src="images/user.jpg" alt="Profile Image">
+                            </div>
+            
+                            <div class="about-col2">
+                                <h1 style="font-size: 28px; text-align:center;" class="sub-title">Character profile</h1>
+                                <p></p>
+                            </div>
+                                   
+                            <div class="tab-titles">
+                                <p class="tab-links active-link" onclick="openTab('abouts')">About</p>
+                                <p class="tab-links" onclick="openTab('skills')">Skills</p>
+                                <p class="tab-links" onclick="openTab('experience')">Experience</p>
+                                <p class="tab-links" onclick="openTab('education')">Education</p>
+                            </div>
+        
+                            <div class="tab-contents active-tab" id="abouts">
+                                <span><h1 style="font-size: 20px;">Hometown: </h1><p>Oamaru</p><br>
+                                <h1>Interests:
+                            </div>
+                            <div class="tab-contents" id="skills">
+                                <ul>
+                                    <li><span>Game Development</span><br>Creating applications using Unity and C#</li>
+                                    <li><span>Data Engineering</span><br>Data extraction, automation, and scripting.</li>
+                                    <li><span>Development</span><br>Creating bots, data projects, and more.</li>
+                                    <li><span>Development</span><br>Creating bots, data projects, and more.</li>
+                                </ul>
+                            </div>
+        
+                            <div class="tab-contents" id="experience">
+                                <ul>
+                                    <li><span>2022 - 2023 <i class = "right arrow"></i></span><br>Data Engineering intern @ ezyVet</li>
+                                    <li><span>2023</span><br>Data Analyst @ Te Whatu Ora</li>
+                                    <li><span>2024 - present</span><br>IT Service Desk Engineer @ NZAA</li>
+                                </ul>
+                            </div>
+        
+                            <div class="tab-contents" id="education">
+                                <ul>
+                                    <li><span>2020 - 2024</span><br>Bachelors of Computer Science at University of Canterbury</li>
+                                    <li><span>2020 - current</span><br>Personal Projects on my github @ github.com/ItsTarras</li>
+                                    <li><span>Multiple Timeframes</span><br>2 Industry internships at ezyVet and Te Whatu Ora</li>
+                                </ul>
+                            </div>
+                        </div>
+            
+                    </div>
+                </div>
+                <!-- End the about section -->
+
             </div>
+            <!-- Ends the header-top section -->
         </div>
     </div>
 
-
-
-
-<!------------------This is the about section for the lower segment of the website------------------->
-    <div id="about"> 
-        <div class="container">
-            <div class="row">
-                <div class="about-col1">
-                    
-                </div>
-
-                <div class="about-col2">
-                    <h1 class="sub-title">About Me</h1>
-                    <p>I am Tarras Weir, an aspiring developer.</p>
-                       <p>
-                        Having experienced the industry via multiple internships, I have made it 
-                        my goal to seek out interesting roles where I feel I can make a difference.
-                         For years, I have built successful relationships through jobs, created many 
-                        personal projects, and aimed to hone my programming skills through 
-                        academic pursuits.
-                       </p>
-                    <div class="tab-titles">
-                        <p class="tab-links active-link" onclick="openTab('skills')">Skills</p>
-                        <p class="tab-links" onclick="openTab('experience')">Experience</p>
-                        <p class="tab-links" onclick="openTab('education')">Education</p>
-                    </div>
-
-                    <div class="tab-contents active-tab" id="skills">
-                        <ul>
-                            <li><span>Game Development</span><br>Creating applications using Unity and C#</li>
-                            <li><span>Data Engineering</span><br>Data extraction, automation, and scripting.</li>
-                            <li><span>Development</span><br>Creating bots, data projects, and more.</li>
-                        </ul>
-                    </div>
-
-                    <div class="tab-contents" id="experience">
-                        <ul>
-                            <li><span>2022 - 2023</span><br>Data Engineering intern at ezyVet</li>
-                            <li><span>2023</span><br>Data Analyst at Te Whatu Ora</li>
-                        </ul>
-                    </div>
-
-                    <div class="tab-contents" id="education">
-                        <ul>
-                            <li><span>2020 - 2024</span><br>Bachelors of Computer Science at University of Canterbury</li>
-                            <li><span>2020 - current</span><br>Personal Projects on my github @ github.com/ItsTarras</li>
-                            <li><span>Multiple Timeframes</span><br>2 Industry internships at ezyVet and Te Whatu Ora</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
 
 <!--Portfolio section-->
 <div id ="portfolio">
@@ -219,24 +226,11 @@
                 tabcontent.classList.remove("active-tab");
             }
 
+            /*Shows the current target*/
             event.currentTarget.classList.add("active-link");
             document.getElementById(tabname).classList.add("active-tab");
         }
     </script>
-
-
-
-
-
-
-
-
-
-    
+  
  </body>
-
-
-
-
-
 </html>

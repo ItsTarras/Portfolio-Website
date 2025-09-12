@@ -11,38 +11,63 @@ body{
     color: #fff;
 }
 
-#header{
-    width: 100%;
-    height: 100vh;
-    background-image: url(images/tarras-background.png);
-    background-size: cover;
-    background-position: bottom;
+/*Header section*/
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 999; 
 }
+
+
 .container{
-    padding: 5% 5%;
+    padding: 0% 0%;
+    padding-bottom: 10%;
 }
-nav{
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 150px 10%;
+    gap: 70px;
+}
+
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 10px 10%;
+    padding: 0 10%;
+    background: #111;
+    border-bottom: 1px solid #333;
 }
+
+
 .logo{
-    width: 140px;
+    width: 60px;
     opacity: 80%;
+    translate: 0 25px;
+    padding: 10px;
 }
 
 nav ul li{
     display: inline-block;
     list-style: none;
     margin: 10px 20px;
+    padding-bottom: 20px;
 }
 
 nav ul li a{
     color: white;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 25px;
     position: relative;
 }
 
@@ -52,29 +77,38 @@ nav ul li a::after{
     height: 150%;
     background-color: rgba(23, 123, 14, 0.5);
     position: absolute;
-    left: -10%;
+    left: -20%;
     right: 100px;
     bottom: -6px;
     top: -6px;
-    transition: 0.25s;
+    transition: 0.2s;
+    border-radius: 10px;
 }
 
 nav ul li a:hover::after{
-    width: 120%
+    width: 140%
 }
 
+.header-text{
+    padding-right: 0%;
+    padding-top: 0%;
+    flex: 1;
+    border-bottom: 1px solid green;
+    border-radius: 0px;
+}
 .header-text h1{
     font-size: 60px;
 }
 .header-text p{
-    margin-top: 5%;
-    font-size: 25px;
-    margin-bottom: 1%;
+    margin-top: 0.5%;
+    font-size: 22px;
+    margin-bottom: 0.5%;
+    font-style: italic;
 }
 
 .header-text h1 span{
     color: green;
-    animation: animate 1.5s linear infinite;
+    animation: animate 3s linear infinite;
 }
 
 @keyframes animate{
@@ -104,45 +138,55 @@ nav ul li a:hover::after{
 
 /* about section */
 
-#about{
-    padding: 40px 0px;
+#about {
     background-color: #090909A5;
-    opacity: 1;
-    transition: 1s;
-    transform: translate(0, 10vh);
-    color: white;
-    position: center;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    border: 1px solid green;
     border-radius: 20px;
+    padding: 20px;
+    max-width: 30%;
+    transform: none;
+    opacity: 1;
+    position: relative;
 }
 
+
 .about.visible {
-    opacity: 1;
+    opacity: 100;
     transform: translate(0, 0);
 }
 
 .row{
-    display: flex;
+    display:flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
 .about-col1{
-    flex-basis: 35%;
-    background-image: url(images/user.jpg);
-    background-size: cover;
-    border-radius: 20px;
-    background-position: center;
-    height: 75vh;
+    height: 30vh; 
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-col1 img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 4px dashed green;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    padding: 2px;
 }
 
 .about-col2{
-    flex-basis: 62%;
+    flex-basis: 100vh;
+    flex: 1;
+    padding: 10px;
+    height: 5vh;
     color: white;
+    align-items: center;
 }
 
 .sub-title{
@@ -158,8 +202,11 @@ nav ul li a:hover::after{
 }
 
 .tab-titles{
-    display: flex;
-    margin: 20px 0 40px;
+    display:flex;
+    flex-basis: 100px;
+    margin: 0px 0 0px;
+    padding-left: 1px;
+
 }
 
 .tab-links{
@@ -182,8 +229,10 @@ nav ul li a:hover::after{
 }
 
 .tab-links.active-link::after{
-    width: 50%;
+    width: 100%;
 }
+
+
 
 .tab-contents ul li{
     list-style: none;
@@ -399,3 +448,33 @@ nav ul li a:hover::after{
     transform: none;
     visibility: visible;
 }
+
+
+/*Arrows for dropdown sections::after*/
+.arrow {
+  border: solid green;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
