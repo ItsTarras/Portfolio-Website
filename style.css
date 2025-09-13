@@ -1,7 +1,7 @@
 *{
     margin:0;
     padding:0;
-    font-family: "Poppins", sans-serif;
+    font-family: monospace;
     box-sizing: border-box;
 }
 
@@ -96,20 +96,23 @@ nav ul li a:hover::after{
     flex: 1;
     border-bottom: 1px solid green;
     border-radius: 0px;
+    text-align: center;
 }
 .header-text h1{
-    font-size: 60px;
+    font-size: 55px;
 }
 .header-text p{
-    margin-top: 0.5%;
+    margin-top: 1%;
     font-size: 22px;
-    margin-bottom: 0.5%;
+    margin-bottom: 1%;
     font-style: italic;
+    padding: 2px;
 }
 
 .header-text h1 span{
     color: green;
     animation: animate 3s linear infinite;
+    padding: 10px;
 }
 
 @keyframes animate{
@@ -142,6 +145,7 @@ nav ul li a:hover::after{
 #about {
     background-color: #090909A5;
     border: 1px solid green;
+    box-shadow: 0 20px 25px rgba(0, 100, 0, 0.3);
     border-radius: 20px;
     padding: 20px;
     max-width: 30%;
@@ -149,7 +153,6 @@ nav ul li a:hover::after{
     opacity: 1;
     position: relative;
     height: auto;
-    box-shadow: 0 20px 25px rgba(0, 100, 0, 0.3);
 }
 
 .about.visible {
@@ -183,37 +186,38 @@ nav ul li a:hover::after{
     padding: 2px;
 }
 
-.about-col2{
-    flex-basis: 100vh;
-    flex: 1;
+.about-col2 {
+    flex-basis: 60%;
     padding: 10px;
-    height: 5vh;
     color: white;
     align-items: center;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .sub-title{
-    font-size: 60px;
-    font-weight: 250;
+    font-size: 30px;
+    font-weight:bold;
     color: white;
     position: relative;
-    text-align: center;
-    background-color: #09090926;
-    border-radius: 20px;
+    text-align: center; 
+
+
     margin-bottom: 20px;
+    border-bottom: 2px solid green;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    z-index: 10000;
 }
 
 .tab-titles{
     display:flex;
     flex-basis: 100px;
-    margin: 0px 0 0px;
+    margin: 1px 0 0px;
     padding-left: 1px;
-
 }
 
 .tab-links{
-    margin-right: 50px;
+    margin-right: 55px;
     font-size: 18px;
     font-weight: 500;
     cursor: pointer;
@@ -323,7 +327,7 @@ nav ul li a:hover::after{
   position: absolute;
   bottom: 20px;
   left: 50%;
-  transform: translateX(-50%) translateY(-110%);
+  transform: translateX(-50%) translateY(-2vh);
   width: 80%;
   max-width: 600px;
   padding: 1rem 1.5rem;
@@ -348,7 +352,7 @@ nav ul li a:hover::after{
   }
   to {
     opacity: 1;
-    transform: translate(-50%, -110%);
+    transform: translate(-50%, -2vh);
   }
 }
 
@@ -387,10 +391,11 @@ nav ul li a:hover::after{
 	height: 20px;
 	background: green;
 	text-align: center;
-	line-height: 1.2;
+	line-height: 1.25;
 	position: relative;
 	border-radius: 50%;
 }
+
 .timeline li:before {
 	display: inline-block;
 	content: attr(data-year);
@@ -410,6 +415,11 @@ nav ul li a:hover::after{
 .timeline li:after {
 	display: inline-block;
 	content: attr(data-text);
+    background-color: #090909A5;
+    border: 1px solid green;
+    box-shadow: 0 10px 100px rgba(0, 100, 0, 0.3);
+    border-radius: 10px;
+    padding: 10px;
 	font-size: 16px;
 	position: absolute;
     width: 200px;
@@ -641,13 +651,14 @@ nav ul li a:hover::after{
   opacity: 0;
   transform: translateY(5px);
   visibility: hidden;
-  transition: opacity 0.6s ease-out, transform 0.3s ease-out;
+  transition: opacity 0.8s ease-in, transform 0.3s ease-out;
   will-change: opacity, visibility;
 }
 .fade-in-section.is-visible {
   opacity: 1;
   transform: none;
   visibility: visible;
+  transition: opacity 0.1 ease-out;
 }
 
 
