@@ -10,6 +10,7 @@
     <script type="text/javascript" src="function.js"></script>
     <!--Name the website title-->
     <title>Tarras Personal Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 
     <!--Link the html file to the css file.-->
@@ -32,12 +33,6 @@
             <nav>
                 <!--Creates an unordered list.-->
                 <ul>
-                    <!--List declaration-->
-                    <li>
-                        <!--Create a clickable link.-->
-                        <a href="#">Home</a>
-                    </li>
-
                     <li>
                         <!--Create a clickable link.-->
                         <a href="#">Portfolio</a>
@@ -62,152 +57,134 @@
             </nav>
 
             <!--Make this section a separate class so we can modify and fine tune the details.-->
-            <div class ="header-top">
+            <div class="main fade-in-section is-visible">
+                <div class ="header-top">
 
-            <!-- This is the header section where it flashes my name -->
-                <div class="header-text">
-                    <p>Computer Scientist<h1>The Portfolio of <span>Tarras Weir</span></h1></p>
-                </div>
-            <!-- Edit the about section with my achievements and personal. -->
-                <div id="about"> 
-                    <div class="container">
-                        <div class="row">
-                            <div class="about-col1">
-                                <img src="images/user.jpg" alt="Profile Image">
-                            </div>
-            
-                            <div class="about-col2">
-                                <h1 style="font-size: 28px; text-align:center;" class="sub-title">Character profile</h1>
-                                <p></p>
-                            </div>
-                                   
-                            <div class="tab-titles">
-                                <p class="tab-links active-link" onclick="openTab('abouts')">About</p>
-                                <p class="tab-links" onclick="openTab('skills')">Skills</p>
-                                <p class="tab-links" onclick="openTab('experience')">Experience</p>
-                                <p class="tab-links" onclick="openTab('education')">Education</p>
-                            </div>
-        
-                            <div class="tab-contents active-tab" id="abouts">
-                                <span><h1 style="font-size: 20px;">Hometown: </h1><p>Oamaru</p><br>
-                                <h1>Interests:
-                            </div>
-                            <div class="tab-contents" id="skills">
-                                <ul>
-                                    <li><span>Game Development</span><br>Creating applications using Unity and C#</li>
-                                    <li><span>Data Engineering</span><br>Data extraction, automation, and scripting.</li>
-                                    <li><span>Development</span><br>Creating bots, data projects, and more.</li>
-                                    <li><span>Development</span><br>Creating bots, data projects, and more.</li>
-                                </ul>
-                            </div>
-        
-                            <div class="tab-contents" id="experience">
-                                <ul>
-                                    <li><span>2022 - 2023 <i class = "right arrow"></i></span><br>Data Engineering intern @ ezyVet</li>
-                                    <li><span>2023</span><br>Data Analyst @ Te Whatu Ora</li>
-                                    <li><span>2024 - present</span><br>IT Service Desk Engineer @ NZAA</li>
-                                </ul>
-                            </div>
-        
-                            <div class="tab-contents" id="education">
-                                <ul>
-                                    <li><span>2020 - 2024</span><br>Bachelors of Computer Science at University of Canterbury</li>
-                                    <li><span>2020 - current</span><br>Personal Projects on my github @ github.com/ItsTarras</li>
-                                    <li><span>Multiple Timeframes</span><br>2 Industry internships at ezyVet and Te Whatu Ora</li>
-                                </ul>
+                <!-- This is the header section where it flashes my name -->
+                    <div class="header-container">
+                        <div class="header-text">
+                            <p>Computer Scientist<h1>The Portfolio of <span>Tarras Weir</span></h1></p>
+                        </div>
+                        <!--Make a container beneath the header in which the portfolio items can go-->
+                        <div class="portfolio-section">
+                            <div class="carousel">
+                                <div class="arrow left">&#10094;</div>
+                                <img src="images/data-project.gif" class="active">
+                                <img src="images/gamedev.gif">
+                                <img src="https://picsum.photos/id/1018/600/400">
+                                <img src="https://picsum.photos/id/1025/600/400">
+                                <div class="arrow right">&#10095;</div>
+                                <!-- Frosted glass project descriptions -->
+                                <div class="project-desc active">
+                                    <h2>PySpark - Shopping statistics</h2>
+                                    <p>This project was a test of my data analysis and transformation skills using Spark, RDDs, and other related big data
+                                    methods. The goal was to sift through data based on criteria, ensure the performance was optimal, the values were
+                                    accurate, and get a valuable takeaway from the output. This was all run on Google Cloud clusters.</p>
+                                </div>
+                                <div class="project-desc">
+                                    <h2>Project Two</h2>
+                                    <p>This is the description of project two.</p>
+                                </div>
+                                <div class="project-desc">
+                                    <h2>Project Three</h2>
+                                    <p>This is the description of project three.</p>
+                                </div>
+                                <div class="project-desc">
+                                    <h2>Project Four</h2>
+                                    <p>This is the description of project four.</p>
+                                </div>
                             </div>
                         </div>
-            
                     </div>
+                <!-- Edit the about section with my achievements and personal. -->
+                    <div id="about"> 
+                        <div class="container">
+                            <div class="row">
+                                <div class="about-col1">
+                                    <img src="images/user.jpg" alt="Profile Image">
+                                </div>
+                
+                                <div class="about-col2">
+                                    <h1 style="font-size: 28px; text-align:center;" class="sub-title">Character profile</h1>
+                                    <p></p>
+                                </div>
+                                    
+                                <div class="tab-titles">
+                                    <p class="tab-links active-link" onclick="openTab('abouts')">About</p>
+                                    <p class="tab-links" onclick="openTab('skills')">Skills</p>
+                                    <p class="tab-links" onclick="openTab('experience')">Experience</p>
+                                    <p class="tab-links" onclick="openTab('education')">Education</p>
+                                </div>
+            
+                                <div class="tab-contents active-tab" id="abouts">
+                                    <ul>
+                                        <li><span>Hometown</span><br>Oamaru</li>
+                                        <li><span>Interests</span><br>Cloud Development, Game Development, Software Development, Data Engineering & Analytics</li>
+                                        <li><span>Development</span><br>Creating bots, data projects, and more.</li>
+                                    </ul>
+                                </div>
+                                <div class="tab-contents" id="skills">
+                                    <ul>
+                                        <li><span><h1 style="font-size: 18px;">Game Development</h1></span>Creating applications using Unity and C#</li>
+                                        <li><span><h1 style="font-size: 18px;">Data Engineering</h1></span><br>Data extraction, automation, and scripting.</li>
+                                        <li><span><h1 style="font-size: 18px;">Development</h1></span><br>Creating bots, data projects, and more.</li>
+                                    </ul>
+                                </div>
+            
+                                <div class="tab-contents" id="experience">
+                                    <ul>
+                                        <li><span>2022 - 2023 <i class = "right arrow"></i></span><br>Data Engineering intern @ ezyVet</li>
+                                        <li><span>2023</span><br>Data Analyst @ Te Whatu Ora</li>
+                                        <li><span>2024 - present</span><br>IT Service Desk Engineer @ NZAA</li>
+                                    </ul>
+                                </div>
+            
+                                <div class="tab-contents" id="education">
+                                    <ul>
+                                        <li><span>2020 - 2024</span><br>Bachelors of Computer Science at University of Canterbury</li>
+                                        <li><span>2020 - current</span><br>Personal Projects on my github @ github.com/ItsTarras</li>
+                                        <li><span>Multiple Timeframes</span><br>2 Industry internships at ezyVet and Te Whatu Ora</li>
+                                    </ul>
+                                </div>
+                            </div>
+                
+                        </div>
+                    </div>
+                    <!-- End the about section -->
                 </div>
-                <!-- End the about section -->
-
+                <div class="bottom">
+                    
+                </div>
             </div>
             <!-- Ends the header-top section -->
         </div>
     </div>
 
-
-<!--Portfolio section-->
-<div id ="portfolio">
-    <div class="container">
-        <h1 class="sub-title">My projects</h1>
-        <div class="work-list">
-
-            <div class="work">
-                <img src="images/discord.png">
-                <div class="layer" id="data">
-                    <h3>Big Data Analysis project</h3>
-                    <p> This project was a test of my data analysis and transformation skills using Spark, RDDs, and other related big data
-                        methods. The goal was to sift through data based on criteria, ensure the performance was optimal, the values were
-                        accurate, and get a valuable takeaway from the output. This was all run on Google Cloud clusters.
-                    </p>
-                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <div class="work">
-                <img src="images/baby-tarras.jpg">
-                <div class="layer" id="tewhatuora">
-                    <h3>Data Automation and Presentation Board</h3>
-                    <p> In this project, I used tools such as the REST API, Python scripting, PowerBI, and others. This was a fairly
-                        independent project, as I was simply continuing on progress a previous intern had made, as well as his notes, but
-                        nothing else.
-                        The goal of this project was to analyse the issues and incidents around different sites, and present the data into a
-                        readable format. This was so the manager could better allocate his resources. The project code is available via my
-                        Github.</p>
-                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <div class="work">
-                <img src="images/discord.png">
-                <div class="layer" id ="discord">
-                    <h3>Discord word counter</h3>
-                    <p>This was an experiment in which I programmed a bot using Python and the Discord API. 
-                        It counts how many times each user has said a word, and stores it in a dictionary.</p>
-                    <a href="#"><i class="fas fa-external-link-alt"></i><img src="images/export.png"></a>
-                </div>
-            </div>
+    <!--Start the timeline-->
+    <div class="time fade-in-section">
+        <div class="timeline-text">
+            My history:
         </div>
-
-
-        <a href="#" class="btn">See more</a>
+        <ul class="timeline">
+            <li data-year="2020" data-text="University of Canterbury study begins - Game Design Major."></li>
+            <li data-year="2021" data-text="Degree swap to Software engineering/Computer Science."></li>
+            <li data-year="2022" data-text="First internship achieved at ezyVet in Auckland - Data Engineering."></li>
+            <li data-year="2023" data-text="Seconds internship achieved at Te Whatu Ora Govt. Health - Data Analyst"></li>
+            <li data-year="2024" data-text="Degree completed. Job attained at NZAA as Service Desk Engineer."></li>
+            <li data-year="2025" data-text="AWS Cloud Practitioner certified. ITIL Foundations certified. Projects continued such as this website, or my data projects."></li>
+        </ul>
     </div>
-</div>
-
-<!-------------contact information------------------>
-<div if="contact">
-    <div class="container">
-        <div class="row">
-            <div class="contact-left">
-                <h1 class="sub-title">Contact Me</h1>
-                <p><i class="fas fa-paper-plane"></i>&#9993; tarrasweir@gmail.com</p>
-                <p><i class="fas fa-phone-square-alt"></i>&#9990; (+64) 22 699 0332</p>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/Tarras.614"><i class="fab fa-facebook"></i></a>
-
-                    <a href="https://github.com/ItsTarras"><i class="fab fa-github"></i></a>
-
-                    <a href="https://linkedin.com/in/tarras-weir-851187233/"><i class="fab fa-linkedin"></i></a>
-                </div>
-
-                <a href="images/CV.pdf" download class="btn btn2">Download my CV</a>
-
-            </div>
-
-            <!--Define the grid for the contact form.-->
-            <div class="contact-right">
-                <form>
-                    <input type="text" name="Name" placeholder="Your name" required>
-                    <input type="text" name="email" placeholder="Your email address" required>
-                    <textarea name="Message" rows="6" placeholder="Your message"></textarea>
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
-        </div>
+    <div>
+        <ul class="complete-bottom">
+        </ul>
     </div>
-</div>
+    <div class="socials">
+        <a href="https://github.com/ItsTarras" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/tarras-weir-851187233/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:tarrasweir614@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+
+
 
     <script>
         var tablinks = document.getElementsByClassName("tab-links");
@@ -231,6 +208,66 @@
             document.getElementById(tabname).classList.add("active-tab");
         }
     </script>
-  
+
+    <!--Script for the moving imagery for projects-->
+  <script>
+    const images = document.querySelectorAll(".carousel img");
+    const leftArrow = document.querySelector(".arrow.left");
+    const rightArrow = document.querySelector(".arrow.right");
+    const current_project_text = document.querySelectorAll(".project-desc");
+    let current = 0;
+
+    function showImage(index) {
+      images.forEach((img, i) => {
+        img.classList.remove("active");
+        if (i === index) img.classList.add("active");
+      });
+    }
+
+    function showProjectDescription(index) {
+        current_project_text.forEach((div, i) => {
+            div.classList.remove("active");
+            if (i === index) div.classList.add("active");
+        });
+    }
+
+    leftArrow.addEventListener("click", () => {
+      current = (current - 1 + images.length) % images.length;
+      showImage(current);
+      showProjectDescription(current);
+    });
+
+    rightArrow.addEventListener("click", () => {
+      current = (current + 1) % images.length;
+      showImage(current);
+      showProjectDescription(current);
+    });
+    </script>
+
+    <script>
+        // Select all elements you want to fade in
+        const faders = document.querySelectorAll('.fade-in-section');
+
+        const appearOptions = {
+            threshold: 0.1, // 10% of element is visible
+            rootMargin: "0px 0px -50px 0px" // slightly before it appears
+        };
+
+        const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+            }
+            else{
+                entry.target.classList.remove('is-visible');
+            }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+    </script>
+
  </body>
 </html>

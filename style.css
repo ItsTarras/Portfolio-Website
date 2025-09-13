@@ -47,6 +47,7 @@ nav {
     padding: 0 10%;
     background: #111;
     border-bottom: 1px solid #333;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 2);
 }
 
 
@@ -90,8 +91,8 @@ nav ul li a:hover::after{
 }
 
 .header-text{
-    padding-right: 0%;
-    padding-top: 0%;
+    padding-right: 10%;
+    padding-top: 1%;
     flex: 1;
     border-bottom: 1px solid green;
     border-radius: 0px;
@@ -147,8 +148,9 @@ nav ul li a:hover::after{
     transform: none;
     opacity: 1;
     position: relative;
+    height: auto;
+    box-shadow: 0 20px 25px rgba(0, 100, 0, 0.3);
 }
-
 
 .about.visible {
     opacity: 100;
@@ -159,10 +161,11 @@ nav ul li a:hover::after{
     display:flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    padding-top: 20px;
 }
 
 .about-col1{
-    height: 30vh; 
+    height: auto; 
     width: 100%;
     display: flex;
     justify-content: center;
@@ -232,8 +235,6 @@ nav ul li a:hover::after{
     width: 100%;
 }
 
-
-
 .tab-contents ul li{
     list-style: none;
     margin: 25px 0;
@@ -254,8 +255,179 @@ nav ul li a:hover::after{
     display: block;
 }
 
+/*portfolio section-*/
+.portfolio-section{
+    padding: 30px;
+}
 
-/*-PORTFOLIO-*/
+.carousel {
+    position: relative;
+    width: 950px;
+    height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.carousel img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+    animation: fadeIn 0.8s ease;
+}
+
+.carousel img.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.5rem;
+    color: white;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.3s ease;
+    z-index: 10;
+}
+
+.arrow:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.arrow.left {
+    left: 15px;
+}
+
+.arrow.right {
+    right: 15px;
+}
+
+.project-desc {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-110%);
+  width: 80%;
+  max-width: 600px;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  color: white;
+  text-align: center;
+  display: none;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  animation: fadeInUp 0.8s ease;
+}
+
+.project-desc.active {
+  display: block;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -110%);
+  }
+}
+
+/*Timeline section0*/
+.timeline {
+	width: 1500px;
+	height: 10px;
+    margin: 100px auto;
+	list-style: none;
+	text-align: justify;
+	padding-bottom: 20px;
+	background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 45%, green 51%, rgba(255,255,255,0) 57%, rgba(255,255,255,0) 100%);
+}
+
+.time{
+    padding: 100px;
+    padding-top: 30px;
+    padding-bottom:200px;
+}
+
+.timeline-text{
+    text-align: center;
+    background:color red;
+    padding-bottom: 100px;
+}
+
+.timeline:after {
+    display: inline-block;
+    content: "";
+    width: 100%;
+}
+
+.timeline li {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: green;
+	text-align: center;
+	line-height: 1.2;
+	position: relative;
+	border-radius: 50%;
+}
+.timeline li:before {
+	display: inline-block;
+	content: attr(data-year);
+	font-size: 26px;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.timeline li:nth-child(odd):before {
+	top: -40px;
+}
+.timeline li:nth-child(even):before {
+	bottom: -40px;
+}
+
+.timeline li:after {
+	display: inline-block;
+	content: attr(data-text);
+	font-size: 16px;
+	position: absolute;
+    width: 200px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.timeline li:nth-child(odd):after {
+	bottom: 0;
+	margin-bottom: -10px;
+	transform: translate(-50%, 100%);
+}
+.timeline li:nth-child(even):after {
+	top: 0;
+	margin-top: -10px;
+	transform: translate(-50%, -100%);
+}
+/*-OLD PORTFOLIO-*/
 #portfolio{
     padding: 0px 0px;
     background-color: #090909A5;
@@ -435,46 +607,73 @@ nav ul li a:hover::after{
     transform: translateY(-5px);
 }
 
-.fade-in-section {
-    opacity: 0;
-    transform: translateY(20vh);
-    visibility: hidden;
-    transition: opacity 0.6s ease-out, transform 1.2s ease-out;
-    will-change: opacity, visibility;
+
+.bottom{
+    width: 80%;
+    height: 5vh;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: -80px auto;
+    border-bottom: 1px solid green;
+    text-align: center;
 }
 
-.fade-in-section.is-visible {
-    opacity: 1;
-    transform: none;
-    visibility: visible;
+.complete-bottom{
+    width: 80%;
+    height: 20vh;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: -80px auto;
+    border-bottom: 1px solid green;
+    text-align: center;
 }
-
 
 /*Arrows for dropdown sections::after*/
 .arrow {
   border: solid green;
   border-width: 0 3px 3px 0;
   display: inline-block;
-  padding: 3px;
+  padding: 10px;
 }
 
-.right {
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
+/*Sections for fading*/
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(5px);
+  visibility: hidden;
+  transition: opacity 0.6s ease-out, transform 0.3s ease-out;
+  will-change: opacity, visibility;
+}
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
 }
 
-.left {
-  transform: rotate(135deg);
-  -webkit-transform: rotate(135deg);
+
+.socials {
+  width: 80%;
+  margin: 20px auto 40px auto; 
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 30px; 
+  z-index: 2000;
 }
 
-.up {
-  transform: rotate(-135deg);
-  -webkit-transform: rotate(-135deg);
+.socials a {
+  display: inline-block; 
+  color: green;
+  font-size: 28px;
+  text-decoration: none;
+  transition: color 0.3s, transform 0.2s;
+  cursor: pointer;
+  z-index: 2000;
 }
 
-.down {
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-}
 
+.socials a:hover {
+  color: white;
+  transform: translateY(-3px);
+  cursor: pointer;
+}

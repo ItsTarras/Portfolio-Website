@@ -1,0 +1,5 @@
+Link the CV button to download my CV.
+Link the contact button to go to the bottom of the webpage.
+Link the portfolio button to go to the top of the webpage.
+Add in some fonts for the history section.
+Finalise the Character profile section.
