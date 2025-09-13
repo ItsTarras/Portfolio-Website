@@ -190,7 +190,9 @@ nav ul li a:hover::after{
     flex-basis: 60%;
     padding: 10px;
     color: white;
+    width: fit-content;
     align-items: center;
+    max-width: 100%;
     margin: 0 auto;
     text-align: center;
 }
@@ -209,34 +211,46 @@ nav ul li a:hover::after{
     z-index: 10000;
 }
 
-.tab-titles{
-    display:flex;
-    flex-basis: 100px;
-    margin: 1px 0 0px;
-    padding-left: 1px;
+.tab-container {
+  margin-top: 20px;
+  text-align: center;
 }
 
-.tab-links{
-    margin-right: 55px;
-    font-size: 18px;
-    font-weight: 500;
-    cursor: pointer;
-    position: relative;
+.tab-titles {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  gap: 25px;              
+  margin-bottom: 20px;
 }
 
-.tab-links::after{
-    content: '';
-    width: 0%;
-    height: 3px;
-    background: rgba(23, 123, 14, 0.5);
-    position: absolute;
-    left: 0;
-    bottom: -8px;
-    transition: 0.5s;
+.tab-links {
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  padding: 5px 10px;
 }
 
-.tab-links.active-link::after{
-    width: 100%;
+.tab-links::after {
+  content: '';
+  width: 0%;
+  height: 3px;
+  background: rgba(23, 123, 14, 0.5);
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: width 0.3s ease;
+}
+
+.tab-links.active-link::after {
+  width: 100%;
+}
+
+.tab-contents {
+  text-align: left; /* or center, depending on your design */
+  margin: 0 auto;
+  max-width: 90%;
 }
 
 .tab-contents ul li{
@@ -252,7 +266,10 @@ nav ul li a:hover::after{
 }
 
 .tab-contents{
-    display: none;
+  display: none;
+  width: 100%;       /* force consistent width */
+  min-height: 200px; /* keep some space reserved */
+  text-align: left;
 }
 
 .tab-contents.active-tab{
